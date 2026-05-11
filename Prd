@@ -1,0 +1,1364 @@
+AI Voice-Controlled Android Assistant — Full PRD
+
+Project Overview
+
+Project Name
+
+Nova AI Assistant (temporary name)
+
+Vision
+
+Build a powerful Android AI assistant capable of:
+
+Voice-controlled automation
+
+Screen reading
+
+Multi-step task execution
+
+Browser/app automation
+
+AI planning
+
+Floating assistant overlay
+
+Human-like UI understanding
+
+
+The assistant should behave like an autonomous AI agent capable of controlling an Android phone through voice and text commands.
+
+
+---
+
+Core Objective
+
+The AI assistant will:
+
+1. Listen to voice commands
+
+
+2. Convert voice to text
+
+
+3. Understand user intent using AI
+
+
+4. Read the current screen
+
+
+5. Decide required actions
+
+
+6. Execute taps/swipes/typing
+
+
+7. Complete multi-step tasks automatically
+
+
+
+
+---
+
+Major Features
+
+1. Voice Command System
+
+Features
+
+Wake word detection
+
+Continuous listening mode
+
+Push-to-talk mode
+
+Offline + online recognition
+
+Hindi + English support
+
+AI voice replies
+
+
+Supported Commands
+
+Open apps
+
+Search content
+
+Send messages
+
+Control browser
+
+Play videos
+
+Execute workflows
+
+
+Example Commands
+
+“Open YouTube”
+
+“Search Naruto episodes”
+
+“Open ChatGPT and generate code”
+
+“Send WhatsApp message”
+
+“Download GitHub project”
+
+
+Technologies
+
+Feature	Technology
+
+Speech-to-text	Whisper API / Android SpeechRecognizer
+Offline STT	Vosk
+Text-to-speech	Android TTS
+Wake word	Porcupine
+
+
+
+---
+
+2. AI Planning Engine
+
+Purpose
+
+The AI planning engine converts user instructions into actionable tasks.
+
+Responsibilities
+
+Intent recognition
+
+Task decomposition
+
+Context understanding
+
+Action planning
+
+Error recovery
+
+Dynamic decision making
+
+
+Example
+
+User says: “Open Chrome and search best anime apps”
+
+AI Plan:
+
+1. Launch Chrome
+
+
+2. Detect search bar
+
+
+3. Tap search field
+
+
+4. Type query
+
+
+5. Press search
+
+
+
+AI Models
+
+GPT API
+
+Gemini API
+
+Ollama local models
+
+Phi-3 Mini
+
+
+Planning Output Format
+
+{
+  "task": "browser_search",
+  "steps": [
+    "open_chrome",
+    "tap_search",
+    "type_query",
+    "press_enter"
+  ]
+}
+
+
+---
+
+3. Screen Reader Engine
+
+Purpose
+
+Allow AI to understand what is currently visible on screen.
+
+Components
+
+Accessibility Parser
+
+Reads:
+
+Buttons
+
+Text
+
+Input fields
+
+Menus
+
+Notifications
+
+
+OCR Engine
+
+Reads text from:
+
+Images
+
+Videos
+
+Custom UIs
+
+
+Vision AI
+
+Detects:
+
+Icons
+
+Buttons
+
+Layouts
+
+Colors
+
+Screen states
+
+
+Technologies
+
+Feature	Technology
+
+UI Reading	AccessibilityService
+OCR	ML Kit OCR
+Advanced OCR	Tesseract
+Vision Processing	OpenCV
+AI Vision	Gemini Vision
+
+
+
+---
+
+4. Action Execution Engine
+
+Purpose
+
+Execute all actions on Android.
+
+Supported Actions
+
+Basic Actions
+
+Tap
+
+Double tap
+
+Long press
+
+Swipe
+
+Scroll
+
+Drag
+
+
+Text Actions
+
+Type text
+
+Copy/paste
+
+Delete text
+
+
+App Actions
+
+Open app
+
+Close app
+
+Switch app
+
+
+Browser Actions
+
+Open website
+
+Search query
+
+Click buttons
+
+Fill forms
+
+
+Technologies
+
+Feature	Technology
+
+Gestures	Accessibility Gestures
+App Launching	Intent APIs
+Automation	AccessibilityService
+Advanced Commands	Shizuku / ADB
+
+
+
+---
+
+5. Floating Assistant UI
+
+Purpose
+
+Provide always-visible AI assistant overlay.
+
+Features
+
+Floating AI bubble
+
+Expandable assistant panel
+
+Voice wave animation
+
+Chat history
+
+Quick actions
+
+Drag anywhere
+
+Minimize/maximize
+
+
+UI States
+
+Idle
+
+Small floating orb.
+
+Listening
+
+Animated voice waveform.
+
+Thinking
+
+AI processing animation.
+
+Executing
+
+Task execution progress.
+
+Overlay Permissions
+
+Uses:
+
+SYSTEM_ALERT_WINDOW
+
+
+
+---
+
+6. Browser Automation System
+
+Features
+
+Open websites
+
+Search Google
+
+Auto-fill forms
+
+Click buttons
+
+Scroll pages
+
+Download files
+
+Control videos
+
+
+Browser Support
+
+Chrome
+
+Brave
+
+Firefox
+
+Edge
+
+
+Workflow Example
+
+Command: “Open YouTube and play anime music”
+
+Execution:
+
+1. Launch YouTube
+
+
+2. Detect search icon
+
+
+3. Enter query
+
+
+4. Open result
+
+
+5. Press play
+
+
+
+
+---
+
+7. Notification Intelligence
+
+Features
+
+Read notifications
+
+Detect OTPs
+
+Open latest notifications
+
+Smart filtering
+
+
+Example
+
+“Copy latest OTP”
+
+
+---
+
+8. AI Memory System
+
+Features
+
+Store user habits
+
+Remember workflows
+
+Remember favorite apps
+
+Conversation history
+
+Personalized suggestions
+
+
+Storage
+
+SQLite
+
+Room Database
+
+Firebase
+
+
+
+---
+
+9. Streaming Assistant Features
+
+Features
+
+Anime search
+
+Episode autoplay
+
+Subtitle switching
+
+Auto fullscreen
+
+Server switching
+
+Watchlist management
+
+
+
+---
+
+10. Offline AI Mode
+
+Features
+
+Local AI execution
+
+Offline voice recognition
+
+Private processing
+
+
+Models
+
+TinyLlama
+
+Gemma
+
+Phi-3
+
+
+Runtime
+
+Ollama
+
+llama.cpp
+
+
+
+---
+
+Full System Architecture
+
+┌────────────────────────────┐
+│        USER VOICE          │
+└─────────────┬──────────────┘
+              │
+              ▼
+┌────────────────────────────┐
+│     SPEECH RECOGNITION     │
+│ Whisper / Vosk / Android   │
+└─────────────┬──────────────┘
+              │
+              ▼
+┌────────────────────────────┐
+│       AI PLANNING CORE     │
+│ GPT / Gemini / Ollama      │
+└─────────────┬──────────────┘
+              │
+   ┌──────────┴──────────┐
+   ▼                     ▼
+┌───────────────┐   ┌────────────────┐
+│ Screen Reader │   │ Memory Engine  │
+│ OCR + Vision  │   │ DB + Context   │
+└───────┬───────┘   └────────────────┘
+        │
+        ▼
+┌────────────────────────────┐
+│      ACTION EXECUTOR       │
+│ Tap / Swipe / Type / Open  │
+└─────────────┬──────────────┘
+              │
+              ▼
+┌────────────────────────────┐
+│      ANDROID SYSTEM        │
+└────────────────────────────┘
+
+
+---
+
+Accessibility Service Architecture
+
+Responsibilities
+
+Read current UI
+
+Detect clickable elements
+
+Perform actions
+
+Track screen changes
+
+
+Service Flow
+
+Accessibility Event
+↓
+Read UI Tree
+↓
+Extract Elements
+↓
+Send To AI Engine
+↓
+Receive Action
+↓
+Execute Gesture
+
+
+---
+
+Accessibility Service Code Example
+
+public class NovaAccessibilityService
+extends AccessibilityService {
+
+    @Override
+    public void onAccessibilityEvent(
+      AccessibilityEvent event
+    ) {
+
+        AccessibilityNodeInfo root =
+        getRootInActiveWindow();
+
+        if(root == null) return;
+
+        scanNode(root);
+    }
+
+    private void scanNode(
+      AccessibilityNodeInfo node
+    ) {
+
+        if(node == null) return;
+
+        CharSequence text = node.getText();
+
+        if(text != null) {
+            Log.d("AI", text.toString());
+        }
+
+        for(int i = 0;
+            i < node.getChildCount();
+            i++) {
+
+            scanNode(node.getChild(i));
+        }
+    }
+
+    @Override
+    public void onInterrupt() {}
+}
+
+
+---
+
+Voice Command Engine Architecture
+
+Microphone
+↓
+Wake Word Detection
+↓
+Speech Recognition
+↓
+Natural Language Parsing
+↓
+Intent Detection
+↓
+Task Planner
+↓
+Execution Engine
+
+
+---
+
+AI Planning Engine Workflow
+
+User Command
+↓
+Intent Recognition
+↓
+Task Breakdown
+↓
+Screen Analysis
+↓
+Action Generation
+↓
+Execute Actions
+↓
+Monitor Result
+↓
+Retry If Failed
+
+
+---
+
+Floating Assistant UI Layout
+
+Components
+
+Floating Bubble
+
+Always visible
+
+Drag support
+
+Mic animation
+
+
+Expanded Panel
+
+Conversation UI
+
+Voice controls
+
+Task history
+
+Quick actions
+
+
+Execution Overlay
+
+Displays current task
+
+Progress animation
+
+
+
+---
+
+Android Studio Project Structure
+
+app/
+ ├── java/com/nova/assistant/
+ │
+ │   ├── ai/
+ │   │    ├── PlannerEngine.java
+ │   │    ├── IntentParser.java
+ │   │    └── GPTManager.java
+ │   │
+ │   ├── accessibility/
+ │   │    ├── NovaAccessibilityService.java
+ │   │    ├── GestureExecutor.java
+ │   │    └── UIScanner.java
+ │   │
+ │   ├── voice/
+ │   │    ├── SpeechManager.java
+ │   │    ├── WakeWordManager.java
+ │   │    └── TTSManager.java
+ │   │
+ │   ├── vision/
+ │   │    ├── OCRManager.java
+ │   │    ├── VisionAnalyzer.java
+ │   │    └── ScreenCaptureManager.java
+ │   │
+ │   ├── ui/
+ │   │    ├── FloatingBubbleService.java
+ │   │    ├── OverlayPanel.java
+ │   │    └── ChatActivity.java
+ │   │
+ │   ├── automation/
+ │   │    ├── BrowserAutomation.java
+ │   │    ├── AppController.java
+ │   │    └── WorkflowExecutor.java
+ │   │
+ │   ├── memory/
+ │   │    ├── MemoryDatabase.java
+ │   │    ├── HistoryManager.java
+ │   │    └── PreferencesManager.java
+ │   │
+ │   └── MainActivity.java
+ │
+ ├── res/
+ ├── AndroidManifest.xml
+ └── build.gradle
+
+
+---
+
+Required Android Permissions
+
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"/>
+
+
+---
+
+Security Architecture
+
+Safety Features
+
+User confirmation for dangerous actions
+
+Permission management
+
+Restricted app protection
+
+Automation logs
+
+
+Blocked Actions
+
+Banking automation
+
+Payment approvals
+
+Secure system changes
+
+
+
+---
+
+Performance Optimization
+
+Optimizations
+
+Background caching
+
+Lazy AI loading
+
+OCR compression
+
+GPU acceleration
+
+Memory cleanup
+
+
+
+---
+
+Monetization Ideas
+
+Options
+
+Premium AI features
+
+Cloud AI subscription
+
+Automation marketplace
+
+Custom workflows
+
+Voice packs
+
+
+
+---
+
+Future Features
+
+Planned Upgrades
+
+Autonomous AI mode
+
+Multi-agent workflows
+
+Desktop control
+
+Smart home integration
+
+AI coding assistant
+
+AI browser agent
+
+Visual memory system
+
+
+
+---
+
+Development Phases
+
+Phase 1 — Foundation
+
+Features
+
+Voice recognition
+
+Open apps
+
+Floating UI
+
+Basic accessibility
+
+
+
+---
+
+Phase 2 — Automation
+
+Features
+
+Taps/swipes
+
+Browser automation
+
+Multi-step workflows
+
+Notification reading
+
+
+
+---
+
+Phase 3 — Intelligence
+
+Features
+
+AI planning
+
+Vision AI
+
+Context memory
+
+Smart execution
+
+
+
+---
+
+Phase 4 — Advanced AI Agent
+
+Features
+
+Autonomous actions
+
+Screen reasoning
+
+Adaptive learning
+
+Full workflow automation
+
+
+
+---
+
+Technical Challenges
+
+Android Restrictions
+
+Background limitations
+
+Secure apps
+
+Accessibility limitations
+
+
+AI Challenges
+
+Hallucinations
+
+Wrong actions
+
+UI variability
+
+
+Performance Challenges
+
+Battery usage
+
+RAM usage
+
+OCR speed
+
+
+
+---
+
+Multi-AI API Integration System
+
+Purpose
+
+Allow users to connect multiple AI providers and switch between them dynamically.
+
+
+---
+
+Supported AI Providers
+
+Provider	Support
+
+OpenAI GPT	Yes
+Google Gemini	Yes
+Claude AI	Yes
+Grok AI	Yes
+DeepSeek	Yes
+OpenRouter	Yes
+Ollama Local AI	Yes
+LM Studio	Yes
+Together AI	Yes
+Perplexity API	Yes
+Mistral AI	Yes
+Cohere AI	Yes
+
+
+
+---
+
+AI Provider Manager
+
+Features
+
+Multiple API key support
+
+Dynamic AI switching
+
+Auto fallback system
+
+AI priority management
+
+Load balancing
+
+Offline model switching
+
+Response routing
+
+
+Example
+
+If GPT fails:
+
+GPT Failed
+↓
+Auto Switch To Gemini
+↓
+Continue Task
+
+
+---
+
+AI API Configuration System
+
+Features
+
+Add/remove API keys
+
+Enable/disable providers
+
+Test API connection
+
+API usage monitoring
+
+Token tracking
+
+Cost tracking
+
+
+Settings UI
+
+AI Providers Screen
+
+OpenAI API Key
+
+Gemini API Key
+
+Claude API Key
+
+Grok API Key
+
+OpenRouter API Key
+
+DeepSeek API Key
+
+
+
+---
+
+AI Routing Engine
+
+Purpose
+
+Automatically select best AI model.
+
+Example Routing
+
+Task	AI Model
+
+Coding	GPT-4.1 / Claude
+Vision	Gemini Vision
+Fast Commands	DeepSeek
+Offline Tasks	Ollama
+Reasoning	Claude
+Browser Tasks	GPT
+
+
+
+---
+
+AI Manager Architecture
+
+User Request
+↓
+AI Router
+↓
+Provider Selection
+↓
+API Manager
+↓
+Selected AI Model
+↓
+Response
+
+
+---
+
+API Key Encryption System
+
+Security Features
+
+AES encryption
+
+Secure local storage
+
+Android Keystore integration
+
+Hidden API fields
+
+
+
+---
+
+AI Provider Classes
+
+ai/
+ ├── providers/
+ │    ├── OpenAIProvider.java
+ │    ├── GeminiProvider.java
+ │    ├── ClaudeProvider.java
+ │    ├── GrokProvider.java
+ │    ├── DeepSeekProvider.java
+ │    ├── OpenRouterProvider.java
+ │    ├── OllamaProvider.java
+ │    └── LMStudioProvider.java
+
+
+---
+
+Unified AI Request Format
+
+{
+  "provider": "openai",
+  "model": "gpt-4.1",
+  "prompt": "Open YouTube and search anime",
+  "context": "screen_data"
+}
+
+
+---
+
+AI Fallback System
+
+Workflow
+
+Primary AI
+↓
+Timeout/Error
+↓
+Switch Provider
+↓
+Retry Request
+
+
+---
+
+Offline + Online Hybrid AI
+
+Online Models
+
+GPT
+
+Gemini
+
+Claude
+
+Grok
+
+
+Offline Models
+
+Phi-3
+
+Gemma
+
+TinyLlama
+
+Mistral Local
+
+
+
+---
+
+AI Cost Optimization
+
+Features
+
+Smart provider selection
+
+Low-cost model routing
+
+Offline execution preference
+
+Token saving mode
+
+
+
+---
+
+AI Model Selector UI
+
+Features
+
+Select default AI
+
+Select fallback AI
+
+Model performance stats
+
+Speed indicators
+
+Token usage graph
+
+
+
+---
+
+AI Memory Context System
+
+Purpose
+
+Provide context-aware AI interactions.
+
+Context Sources
+
+Screen content
+
+App state
+
+Previous commands
+
+User preferences
+
+Recent workflows
+
+
+
+---
+
+AI Streaming Response System
+
+Features
+
+Real-time streaming replies
+
+Incremental execution
+
+Live thinking UI
+
+
+
+---
+
+AI Plugin System
+
+Features
+
+Allow adding future AI providers without updating entire app.
+
+Plugin Examples
+
+Custom AI APIs
+
+Local inference servers
+
+Enterprise AI models
+
+
+
+---
+
+Recommended Tech Stack
+
+Layer	Technology
+
+App Development	Java / Kotlin
+AI APIs	GPT / Gemini
+Offline AI	Ollama
+OCR	ML Kit
+Automation	AccessibilityService
+Database	Room DB
+Cloud	Firebase
+Vision	OpenCV
+Voice	Whisper
+
+
+
+---
+
+Competitive Comparison
+
+System	Capability
+
+entity["mobile_app","Google Assistant","Android AI assistant"]	Basic voice control
+entity["mobile_app","Tasker","Android automation app"]	Automation workflows
+entity["mobile_app","AutoInput","Android automation plugin"]	Accessibility actions
+Nova AI Assistant	Full AI-powered automation
+
+
+
+---
+
+Final Product Goal
+
+Build a next-generation Android AI assistant capable of:
+
+Understanding voice commands
+
+Reading the screen
+
+Planning tasks intelligently
+
+Executing complex workflows
+
+Acting like a real AI agent
+
+
+The final system should combine:
+
+AI assistant
+
+Browser agent
+
+Automation engine
+
+Voice assistant
+
+Screen reader
+
+Personal workflow AI
+
+
+into one unified Android application.
+
+Maine PRD me ab complete multi-AI API system bhi add kar diya hai, jisme:
+
+OpenAI GPT support
+
+Gemini support
+
+Claude support
+
+Grok support
+
+DeepSeek support
+
+OpenRouter support
+
+Ollama local AI
+
+LM Studio support
+
+Multi API key manager
+
+AI routing engine
+
+Auto fallback system
+
+Offline + online hybrid AI
+
+AI provider architecture
+
+API encryption system
+
+AI model selector UI
+
+Streaming responses
+
+Token/cost optimization
+
+Plugin architecture
+
+
+sab include hai.
